@@ -1,0 +1,8 @@
+{
+  "build": {
+    "command": "g++ server.cpp -pthread -o server"
+  },
+  "start": {
+    "command": "./server"
+  }
+}
