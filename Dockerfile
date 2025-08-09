@@ -1,17 +1,15 @@
-# Use an official GCC image
 FROM gcc:latest
 
-# Set the working directory
 WORKDIR /app
 
-# Copy all project files
+# Copy all files into the container
 COPY . .
 
-# Compile server.cpp
+# Compile the C++ server
 RUN g++ server.cpp -pthread -o server
 
-# Expose the TCP port (Railway usually assigns it to $PORT)
-EXPOSE 3000
+# Expose port (match the port your server.cpp uses)
+EXPOSE 5000
 
-# Run the server with the assigned port
+# Start the server
 CMD ["./server"]
